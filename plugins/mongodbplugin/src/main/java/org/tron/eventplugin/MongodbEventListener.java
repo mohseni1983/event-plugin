@@ -71,6 +71,8 @@ public class MongodbEventListener implements IPluginEventListener {
         if (Objects.isNull(data)){
             return;
         }
+        
+        log.info("CONTRACT-EVENT-RECEIVED: "+ data);
 
         MongodbSenderImpl.getInstance().getTriggerQueue().offer(data);
     }
