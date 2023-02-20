@@ -52,6 +52,7 @@ public class MongodbEventListener implements IPluginEventListener {
         if (Objects.isNull(data)){
             return;
         }
+        Logger.info("TRANSACTION-RECEIVED: " + data);
 
         MongodbSenderImpl.getInstance().getTriggerQueue().offer(data);
     }
